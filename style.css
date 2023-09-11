@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
+}
+
+#main {
+  width: 100%;
+  height: 100vh;
+  background-image: url(./assets/pokedex-bg.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Contenedor de Form para buscar Pokemon */
+.poke-data-request {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Formulario para buscar Pokemon */
+#pokemon-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input {
+  text-align: center;
+}
+
+/* Contenedor de la card del Pokemon devuelto por la api */
+.poke-data-result {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Card del Pokemon devuelto de la api */
+.poke-data-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.poke-img {
+  width: 200px;
+}
+
+.poke-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.name,
+.type,
+.peso,
+.altura,
+.exp {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
