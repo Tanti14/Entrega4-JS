@@ -7,20 +7,54 @@
   font-family: "Press Start 2P", cursive;
 }
 
-#main {
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #121314;
+  position: fixed;
+  z-index: 2;
   width: 100%;
-  height: 100vh;
-  background-image: url(./assets/pokedex-bg.jpg);
-  background-position: center;
-  background-attachment: fixed;
-  background-size: 100%;
-  background-repeat: no-repeat;
+  padding: 5px;
+}
 
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  position: relative;
+}
+
+.nav-logo {
+  width: 250px;
+}
+
+.info-container {
+  width: 10%;
+  position: absolute;
+  right: 0;
+}
+
+.nav-link {
+  color: white;
+  /* text-decoration: none; */
+}
+
+#main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 60px;
+  width: 100%;
+  height: 100vh;
+  gap: 30px;
+  background: red;
+  padding-top: 100px;
 }
 
 /* Contenedor de Form para buscar Pokemon */
@@ -41,32 +75,158 @@
 
 .input {
   text-align: center;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 10px;
 }
 
 /* Contenedor de la card del Pokemon devuelto por la api */
 .poke-data-result {
   display: flex;
   justify-content: center;
+  align-items: center;
+  max-width: 1500px;
   width: 100%;
 }
 
+/* Diseños de cards por defecto */
+.precard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  border: 2px solid white;
+  border-radius: 20px;
+  background: white;
+}
+
+.precard-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  gap: 10px;
+}
+
 /* Card del Pokemon devuelto de la api */
+/* .poke-data-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 400px;
+  gap: 30px;
+  border: 3px solid black;
+  background: white;
+  border-radius: 10px;
+  position: relative;
+} */
+
+/* ============================================================= */
+/* PRUEBAS */
+
 .poke-data-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 300px;
-  border: 1px solid black;
+  height: 400px;
+  gap: 80px;
+  border: 3px solid black;
+  background: white;
   border-radius: 10px;
-  padding: 20px;
+  position: relative;
+}
+
+
+.poke-img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.bg {
+  background: limegreen;
+  width: 300px;
+  height: 170px;
+  border: 3px solid black;
+  border-radius: 15px 15px 90% 90%;
+  position: absolute;
+  top: -4px;
 }
 
 .poke-img {
-  width: 200px;
+  width: 150px;
+  position: absolute;
+  top: 40px;
 }
 
-.poke-info {
+.poke-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.type {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 2px 5px;
+}
+
+.t1{
+  background: limegreen;
+}
+
+.t2 {
+  background: rgb(197, 20, 197)
+}
+
+.red {
+  background: red;
+}
+
+/* .none {
+  display: none;
+} */
+
+.poke-specs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 45px;
+}
+
+.peso, .altura{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+/* PRUEBAS */
+/* ===================================================================== */
+
+
+/* .poke-img {
+  width: 200px;
+} */
+
+/* .poke-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,7 +240,7 @@
 .altura,
 .exp {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
-}
+} */

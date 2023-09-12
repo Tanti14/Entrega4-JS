@@ -5,42 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokedex</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/assets/pokeball.png">
   </head>
   <body>
+    <header class="navbar">
+      <nav class="nav-container">
+        <div class="logo-container">
+          <img class="nav-logo" src="./assets/Pokédex_logo.png" alt="" />
+        </div>
+        <div class="info-container">
+          <a class="nav-link" href="https://pokeapi.co/" target="_blank">Resource</a>
+        </div>
+      </nav>
+    </header>
+
     <section id="main">
       <div class="poke-data-request">
         <form id="pokemon-picker">
-          <input id="inputNumber" class="input" type="number" placeholder="Ingrese un Número" />
+          <input
+            id="inputNumber"
+            class="input"
+            type="number"
+            placeholder="Ingrese un Número"
+          />
           <input class="input" type="submit" value="Buscar Pokemon" />
         </form>
       </div>
 
       <div class="poke-data-result">
+
         <!-- <div class="poke-data-card">
-          <img class="poke-img" src="./assets/ditto.png" alt="Ditto Pokemon" />
-          <div class="poke-info">
-            <div class="name">
-              <span>NOMBRE:</span>
-              <span>Ditto</span>
+          <div class="poke-img-container">
+            <div class="bg"></div>
+            <img class="poke-img" src="/assets/1.svg" alt="${pokeName}"/>
+          </div>
+
+          <div class="poke-info-container">
+            <span>BULBASAUR</span>
+            <div class="type-container">
+              <span class="type t1">GRASS</span>
+              <span class="type t2">POISON</span>
             </div>
-            <div class="exp">
-              <span>EXP:</span>
+
+            <div class="poke-specs">
+              <div class="peso">
+                <span>PESO</span>
+                <span>30G</span>
+              </div>
+
+              <div class="altura">
+                <span>ALTURA</span>
+                <span>1.5</span>
+              </div>
+            </div>
+
+            <div class="experience">
               <span>EXP</span>
-            </div>
-            <div class="type">
-              <span>TIPO:</span>
-              <span>TIPO</span>
-            </div>
-            <div class="peso">
-              <span>PESO: </span>
-              <span>Peso</span>
-            </div>
-            <div class="altura">
-              <span>ALTURA: </span>
-              <span>Altura</span>
+              <span>300</span>
             </div>
           </div>
         </div> -->
+
+
       </div>
     </section>
 
