@@ -1,9 +1,9 @@
-const formContainer = document.getElementById("pokemon-picker"); /* Formulario */
-const inputNumber = document.getElementById("inputNumber"); /* Input tipo number */
-const pokeResultContainer = document.querySelector(".poke-data-result"); /* Card Container */
-
-const spanTipo2 = document.getElementById("tipo2")
-
+const formContainer =
+  document.getElementById("pokemon-picker"); /* Formulario */
+const inputNumber =
+  document.getElementById("inputNumber"); /* Input tipo number */
+const pokeResultContainer =
+  document.querySelector(".poke-data-result"); /* Card Container */
 
 const fetchPoke = async (id) => {
   try {
@@ -25,55 +25,39 @@ const isInvalidId = (pokeData) => {
 };
 
 const getPokemonData = (pokeData) => {
-  const tipos = pokeData.types.map((obj) => obj.type.name);
-
-  if (tipos.length > 1) {
-    return {
-      pokeImg: pokeData.sprites.other.dream_world.front_default,
-      pokeName: pokeData.name.toUpperCase(),
-      pokeExp: pokeData.base_experience,
-      pokeType: pokeData.types[0].type.name,
-      pokeType2: pokeData.types[1].type.name,
-      pokePeso: pokeData.weight / 10,
-      pokeAltura: pokeData.height / 10,
-    };
-  }
-
   return {
-    pokeImg: pokeData.sprites.other.dream_world.front_default,
+    pokeImg: pokeData.sprites.other.home.front_default,
     pokeName: pokeData.name.toUpperCase(),
     pokeExp: pokeData.base_experience,
-    pokeType: pokeData.types[0].type.name,
+    pokeType: pokeData.types,
     pokePeso: pokeData.weight / 10,
     pokeAltura: pokeData.height / 10,
   };
 };
 
+const getPokeType = (types) => {
+  return types
+    .map((type) => {
+      return `<span class="${type.type.name} type">${type.type.name}</span>`;
+    })
+    .join("");
+};
 
 // Crear Card
 const createCard = (pokeData) => {
-  const {
-    pokeImg,
-    pokeName,
-    pokeExp,
-    pokeType,
-    pokeType2,
-    pokePeso,
-    pokeAltura,
-  } = getPokemonData(pokeData);
+  const { pokeImg, pokeName, pokeExp, pokeType, pokePeso, pokeAltura } =
+    getPokemonData(pokeData);
 
-  if (pokeType2) {
-    return `<div class="poke-data-card">
+  return `<div class="poke-data-card">
   <div class="poke-img-container">
-    <div class="bg"></div>
+    <div class="bg ${pokeType[0].type.name}"></div>
     <img class="poke-img" src="${pokeImg}" alt="${pokeName}"/>
   </div>
 
   <div class="poke-info-container">
     <span>${pokeName}</span>
     <div class="type-container">
-      <span class="type t1">${pokeType}</span>
-      <span id="tipo2" class="type t2">${pokeType2}</span>
+      ${getPokeType(pokeType)}
     </div>
 
     <div class="poke-specs">
@@ -95,39 +79,6 @@ const createCard = (pokeData) => {
   </div>
 </div>
   `;
-  } else {
-    return `<div class="poke-data-card">
-  <div class="poke-img-container">
-    <div class="bg"></div>
-    <img class="poke-img" src="${pokeImg}" alt="${pokeName}"/>
-  </div>
-
-  <div class="poke-info-container">
-    <span>${pokeName}</span>
-    <div class="type-container">
-      <span class="type t1">${pokeType}</span>
-    </div>
-
-    <div class="poke-specs">
-      <div class="peso">
-        <span>PESO</span>
-        <span>${pokePeso}</span>
-      </div>
-
-      <div class="altura">
-        <span>ALTURA</span>
-        <span>${pokeAltura}</span>
-      </div>
-    </div>
-
-    <div class="experience">
-      <span>EXP</span>
-      <span>${pokeExp}</span>
-    </div>
-  </div>
-</div>
-  `;
-  }
 };
 
 const preCard = () => {

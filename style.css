@@ -152,7 +152,6 @@
 }
 
 .bg {
-  background: limegreen;
   width: 300px;
   height: 170px;
   border: 3px solid black;
@@ -162,7 +161,7 @@
 }
 
 .poke-img {
-  width: 150px;
+  width: 170px;
   position: absolute;
   top: 40px;
 }
@@ -178,27 +177,19 @@
   bottom: 20px;
 }
 
+.type-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
 .type {
   border: 2px solid black;
   border-radius: 10px;
   padding: 2px 5px;
 }
 
-.t1{
-  background: limegreen;
-}
-
-.t2 {
-  background: rgb(197, 20, 197)
-}
-
-.red {
-  background: red;
-}
-
-/* .none {
-  display: none;
-} */
 
 .poke-specs {
   display: flex;
@@ -216,31 +207,75 @@
 }
 
 
-
-
-/* PRUEBAS */
-/* ===================================================================== */
-
-
-/* .poke-img {
-  width: 200px;
-} */
-
-/* .poke-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+/* tipos */
+.normal {
+  background-color: #aa9;
 }
 
-.name,
-.type,
-.peso,
-.altura,
-.exp {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-} */
+.fire {
+  background-color: #f42;
+}
+
+.grass {
+  background-color: #7c5;
+}
+
+.poison {
+  background-color: #a59;
+}
+
+.water {
+  background-color: #39f;
+}
+
+.electric {
+  background-color: #fc3;
+}
+
+.ice {
+  background-color: #6cf;
+}
+
+.fighting {
+  background-color: #b54;
+}
+
+.ground {
+  background-color: #db5;
+}
+
+.flying {
+  background-color: #89f;
+}
+
+.psychic {
+  background-color: #f59;
+}
+
+.bug {
+  background-color: #ab2;
+}
+
+.rock {
+  background-color: #ba6;
+}
+
+.ghost {
+  background-color: #66b;
+}
+
+.dragon {
+  background-color: #76e;
+}
+
+.dark {
+  background-color: rgb(7, 3, 1);
+}
+
+.steel {
+  background-color: #aab;
+}
+
+.fairy {
+  background-color: #e9e;
+}
